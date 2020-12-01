@@ -10,6 +10,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mongoose": "^5.10.14"
-  }
+    "mongoose": "^5.10.14",
+    "my-package1231": "^1.0.0",
+    "underscore": "^1.11.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syedabdulsamad/Node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/syedabdulsamad/Node/issues"
+  },
+  "homepage": "https://github.com/syedabdulsamad/Node#readme"
 }
