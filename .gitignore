@@ -1,2 +1,3 @@
 node_modules/
-/express-practice/node_modules/
+express-practice/node_modules/
+.DS_Store
