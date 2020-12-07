@@ -1,4 +1,3 @@
 {
-    "name": "Prod env name",
-    "pass": "db_pass"
+    "name": "Prod env name"
 }
