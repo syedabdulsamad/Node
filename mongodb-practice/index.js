@@ -7,8 +7,14 @@ mongoose.connect("mongodb://localhost/testdb", {
     .catch((error) => console.log("Failed to connect to db", error));
 
 
+
+
 const consentSchema = new mongoose.Schema({
-    category: String,
+    category: {
+        type: String,
+        required: true,
+        maxlength: 20
+    },
     text: String,
     version: {
         type: Number,
@@ -18,18 +24,24 @@ const consentSchema = new mongoose.Schema({
 const Consent = mongoose.model("Consent", consentSchema);
 
 async function createConsent() {
+    try {
+        const consent = new Consent();
+        consent.category = "marketingmarkettingmarketingmarketting"
+        consent.text = "This is marketing consent with version 4"
+        consent.version = 4
 
-    const consent = new Consent();
-    consent.category = "marketing"
-    consent.text = "This is marketing consent with version 4"
-    consent.version = 4
+        // console.log(`Created consent is: ${consent}`);
+        const result = await consent.save();
+        console.log("save executed successfully");
+        console.log(result);
 
-    console.log(`Created consent is: ${consent}`);
-    const result = await consent.save();
-    console.log(result);
 
+    } catch (ex) {
+        console.log("In catch block")
+        console.log(ex.message)
+    }
 }
-//createConsent();
+createConsent();
 
 async function getAllConsents() {
     const allConsents = await Consent.findOne({
@@ -44,4 +56,4 @@ async function getAllConsents() {
 }
 
 
-getAllConsents();
+//getAllConsents();
